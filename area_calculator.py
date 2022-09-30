@@ -1,25 +1,4 @@
-import math
-
-""" action_choose == 1 """
-def square_area(a):
-    return (a * a)
-
-""" action_choose == 2 """
-def rectangle_area(a, b):
-    return (a * b)
-
-""" action_choose == 3 """
-def triangle_area(a, h):
-    return (0.5 * a * h)
-
-""" action_choose == 4 """
-def circle_area(r):
-    return (math.pi * (r ** 2))
-
-""" action_choose == 5 """
-def trapeze_area(a, b, h):
-    return (a + b) / 2 * h
-
+import shapes
 while True:
 
     info = ("What do you want to do?\nCalculate the area (1-5) or exit (6)?")
@@ -28,7 +7,15 @@ while True:
 
     print(info)
     action_choose = input(
-        """1 - Square\n2 - Rectangle\n3 - Triangle\n4 - Circle\n5 - Trapeze\n6 - Exit program\nYour choice: """)
+"""
+1 - Square
+2 - Rectangle
+3 - Triangle
+4 - Circle
+5 - Trapeze
+6 - Exit program
+
+Your choice: """)
 
     if action_choose == "1":
         a = float(input("Edge length: "))
@@ -37,7 +24,7 @@ while True:
             print("The lenght must be > 0")
             
         elif a > 0:
-            calculated_square_area = square_area(a)
+            calculated_square_area = shapes.square_area(a)
             print("Square area = ", calculated_square_area)
 
     elif action_choose == "2":
@@ -48,7 +35,7 @@ while True:
             print("The lenght must be > 0")
             
         elif a > 0 and b > 0:
-            calculated_rectangle_area = rectangle_area(a, b)
+            calculated_rectangle_area = shapes.rectangle_area(a, b)
             print("Rectangle area = ", calculated_rectangle_area)
 
     elif action_choose == "3":
@@ -59,7 +46,7 @@ while True:
             print("The lenght must be > 0")
             
         elif a > 0 and h > 0:
-            calculated_triangle_area = triangle_area(a, h)
+            calculated_triangle_area = shapes.triangle_area(a, h)
             print("Triangle area = ", calculated_triangle_area)
 
     elif action_choose == "4":
@@ -69,7 +56,7 @@ while True:
             print("The lenght must be > 0")
             
         elif r > 0:
-            calculated_circle_area = circle_area(r)
+            calculated_circle_area = shapes.circle_area(r)
             print ("Circle area = ", calculated_circle_area)
 
     elif action_choose == "5":
@@ -81,7 +68,7 @@ while True:
             print("The lenght must be > 0")
             
         elif a > 0 and b > 0 and h > 0:
-            calculated_trapeze_area = trapeze_area(a, b, h)
+            calculated_trapeze_area = shapes.trapeze_area(a, b, h)
             print("Trapeze area = ", calculated_trapeze_area)
     
     elif action_choose == "6":
