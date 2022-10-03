@@ -1,4 +1,8 @@
 import shapes
+from enum import IntEnum
+
+Menu_Shapes = IntEnum('Menu_Shapes', 'Square, Rectangle, Triangle, Circle, Trapeze, Exit program')
+
 while True:
 
     info = ("What do you want to do?\nCalculate the area (1-5) or exit (6)?")
@@ -6,7 +10,7 @@ while True:
     exit_message = ("See you soon...")
 
     print(info)
-    action_choose = input(
+    action_choose = int(input(
 """
 1 - Square
 2 - Rectangle
@@ -15,9 +19,9 @@ while True:
 5 - Trapeze
 6 - Exit program
 
-Your choice: """)
+Your choice: """))
 
-    if action_choose == "1":
+    if (action_choose == Menu_Shapes.Square):
         a = float(input("Edge length: "))
 
         if a <= 0:
@@ -27,7 +31,7 @@ Your choice: """)
             calculated_square_area = shapes.square_area(a)
             print("Square area = ", calculated_square_area)
 
-    elif action_choose == "2":
+    elif (action_choose == Menu_Shapes.Rectangle):
         a = float(input("First edge length: "))
         b = float(input("Second edge length: "))
 
@@ -38,7 +42,7 @@ Your choice: """)
             calculated_rectangle_area = shapes.rectangle_area(a, b)
             print("Rectangle area = ", calculated_rectangle_area)
 
-    elif action_choose == "3":
+    elif (action_choose == Menu_Shapes.Triangle):
         a = float(input("Base length: "))
         h = float(input("Height: "))
 
@@ -49,7 +53,7 @@ Your choice: """)
             calculated_triangle_area = shapes.triangle_area(a, h)
             print("Triangle area = ", calculated_triangle_area)
 
-    elif action_choose == "4":
+    elif (action_choose == Menu_Shapes.Circle):
         r = float(input("Radius: "))
 
         if r <= 0:
@@ -59,7 +63,7 @@ Your choice: """)
             calculated_circle_area = shapes.circle_area(r)
             print ("Circle area = ", calculated_circle_area)
 
-    elif action_choose == "5":
+    elif (action_choose == Menu_Shapes.Trapeze):
         a = float(input("First edge length: "))
         b = float(input("Second edge length: "))
         h = float(input("Height: "))
@@ -71,7 +75,7 @@ Your choice: """)
             calculated_trapeze_area = shapes.trapeze_area(a, b, h)
             print("Trapeze area = ", calculated_trapeze_area)
     
-    elif action_choose == "6":
+    elif (action_choose == Menu_Shapes.Exit):
         print(exit_message)
         break
 
